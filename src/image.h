@@ -79,7 +79,6 @@ void image::setBitDepth(int input){
 colour image::getPixelColour(int x, int y){
 	// check for invalid inputs
 	bool validCoordinates = (x >= 0 && x < width && y >= 0 && y < height);
-	std::cerr << "Color validation has not been implemented!\n";
 	if(validCoordinates){
 		return frameBuffer[y*width + x];	
 	} else {
@@ -91,9 +90,10 @@ colour image::getPixelColour(int x, int y){
 void image::setPixelColour(int x, int y, colour c){
 	// check for invalid inputs
 	bool validCoordinates = (x >= 0 && x < width && y >= 0 && y < height);
-	std::cerr << "Color validation has not been implemented!\n";
 	if(validCoordinates){
-		frameBuffer[y*width + x] = c;	
+//		frameBuffer[y*width + x] = c;	
+// the array implementation was causing segmentation faults
+		frameBuffer.push_back(c);
 	} else {
 		std::cerr << "Bad coordinates!\n";
 	}
@@ -211,12 +211,6 @@ int ifPPM::decode(std::filebuf* dataBuffer){
 		img.setPixelColour(x, y, col);	
 	} // end x
 	} // end y
-		
-	for(int p =0;p < img.getWidth()*img.getHeight();p++){
-		for(int ch =0;ch < 4;ch++){
-			std::cout << "p: " << p << " ch: " << ch << " val: " << img.frameBuffer[p].channel[ch] << "\n";
-		}
-	};
 	return 1;
 }
 #endif // IMAGE_H

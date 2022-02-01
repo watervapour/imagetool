@@ -1,3 +1,3 @@
 #!/bin/sh
 
-g++ ./src/main.cpp -o imagetool
+g++ ./src/main.cpp -lSDL2 -o imagetool

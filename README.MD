@@ -15,7 +15,7 @@ This is also intended to be a practice of skill, so only official format specifi
 
 Features to be added (in roughly this order) are:
  - [x] output meta-data of .ppm to a file
- - [ ] display a .ppm
+ - [x] display a .ppm
  - [ ] output meta-data of .png to a file
  - [ ] display a .png
  - [ ] writing of colour data to a file
