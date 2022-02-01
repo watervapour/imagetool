@@ -14,7 +14,7 @@ This program is motivated by the unwieldy output of the rtoneweek project.
 This is also intended to be a practice of skill, so only official format specifications will be used as resources for image formats.
 
 Features to be added (in roughly this order) are:
- - [ ] output meta-data of .ppm to a file
+ - [x] output meta-data of .ppm to a file
  - [ ] display a .ppm
  - [ ] output meta-data of .png to a file
  - [ ] display a .png

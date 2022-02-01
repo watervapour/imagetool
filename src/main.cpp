@@ -2,6 +2,8 @@
 #include <fstream>
 #include <filesystem>
 
+#include "image.h"
+
 int main(int argc, char** argv){
 	std::cout << "argc: " << argc <<"\n";
 	std::filesystem::path p;
@@ -31,7 +33,8 @@ int main(int argc, char** argv){
 	} else {
 		std::cout << "File read success.\n";
 	}
-
-	std::cout << std::endl << "Peeking: " << (char)buffer.sgetc() << "\n";
+	
+	ifPPM stuff;
+	stuff.decode(&buffer);
 	return 0;
 }
